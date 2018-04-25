@@ -1,0 +1,46 @@
+// GLOBAL VARIABLES
+$background-color: #0c1317 !global;
+
+// GENERAL
+$use-global-border-box: true !global;
+$use-rem: true !global;
+$use-em: false !global;
+$use-percent: false !global;
+$use-px-fallback: true !global; // allow for pixel fall back
+
+// FONTS
+$font-size: 14px !global;
+$font-family: 'Open Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !global;
+$heading-family: $font-family;
+$font-color: #ffffff !global;
+$heading-color: #e0e0e1 !global;
+$form-font: $font-family !global;
+
+// LINKS
+$link-color: #333 !global;
+$link-hover: #000 !global;
+$link-decoration: underline !global;
+// COLUMNS AND GUTTERS
+$is-fluid: true !global;
+$base-col-width: 63.33333333333px !global; // The width of each columns static grid
+$base-gutter-width: 20px !global; // The space between columns
+$base-col-count: 12 !global; // The number of columns
+$base-width: if($is-fluid, 98%, ($base-col-width + $base-gutter-width) * $base-col-count) !global; // Calculated
+
+// Redefines base width for fluid grid
+$new-grid-width: 1000px;
+
+// BREAKPOINTS
+$tablet-width: 768px !global;
+$mobile-portrait-width: 300px !global;
+$mobile-landscape-width: 420px !global;
+$mobile-fluid-width: 100%;
+$base-font-size: 10px !global;
+
+// Use new grid size
+$use-new-grid: true !global;
+
+// ------ IMPORTS
+@import "mixins-dependencies";
+@import "functions";
+@import "mixins";

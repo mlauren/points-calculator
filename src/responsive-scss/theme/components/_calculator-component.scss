@@ -1,0 +1,150 @@
+
+.calculator-component {
+  // point counter
+  &.container {
+    margin: 0 auto 10px;
+  }
+
+  border: {
+    top: 1px solid #1a222b;
+    bottom: 1px solid #1b1d1f;
+    right: 1px solid #1b1d1f;
+    left: 1px solid #1b1d1f;
+  }
+  background: {
+    image: url('/assets/images/calc-bkg.jpg');
+    size: cover;
+  }
+  .component-title-card {
+    background: rgba(43,43,43,0.5);
+    margin: 10px;
+    .component-title {
+      color: white;
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 0.5rem;
+    }
+  }
+  &--points {
+    .total-points {
+      &--wrapper {
+        padding: 20px;
+        margin: {
+          top: 20px;
+        }
+        @media only screen and (min-width: $tablet-width+1) {
+          margin-right: 20px;
+        }
+        border: 1px solid #191c1d;
+        .points-counter {
+          text-align: center;
+          .points-count {}
+          .points-spent {
+            color: #507092;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  &--path-ind {
+    padding-left: 15px;
+  }
+}
+
+
+
+
+.path-item {
+  &--outer {
+    // desktop
+    position: relative;
+    display: inline-block;
+    min-height: 62px;
+
+    @media only screen and (min-width: $tablet-width+1) {
+      width: 28%;
+    }
+    @media only screen and (max-width: $tablet-width) {
+      width: 25%;
+    }
+
+    &:not(:last-of-type) {
+      @media only screen and (min-width: $tablet-width) {
+
+        .background-stripe {
+          position: absolute;
+          margin-top:13%;
+          width: 100%;
+          height: 20px;
+          border: {
+            top: 2px solid #545657;
+            bottom: 2px solid #545657;
+          }
+          background-color: #414345;
+          z-index: 0;
+          @include opacity(0.5);
+        }
+        &:hover, &.active {
+          .background-stripe {
+            @include opacity(1);
+          }
+        }
+      }
+    }
+    &:last-of-type {
+      width: 62px;
+    }
+
+  }
+
+  &--wrapper {
+    // desktop
+    position: absolute;
+    cursor: pointer;
+    z-index: 0;
+    //
+    border: 1px solid #1b1b1b;
+    &:not(.active) {
+      background: #4c4c4c;
+      background: -moz-linear-gradient(top, #4c4c4c 0%, #4c4c4c 49%, #393939 51%, #494949 93%);
+      background: -webkit-linear-gradient(top, #4c4c4c 0%,#4c4c4c 49%,#393939 51%,#494949 93%);
+      background: linear-gradient(to bottom, #4c4c4c 0%,#4c4c4c 49%,#393939 51%,#494949 93%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#494949',GradientType=0 );
+    }
+    &.active {
+      @include box-shadow(0px 1px 5px 0px rgba(39,45,49,1));
+      background: #6faeef;
+      background: -moz-linear-gradient(top, #6faeef 0%, #6faeef 50%, #253b50 51%, #5e9bd8 93%);
+      background: -webkit-linear-gradient(top, #6faeef 0%,#6faeef 50%,#253b50 51%,#5e9bd8 93%);
+      background: linear-gradient(to bottom, #6faeef 0%,#6faeef 50%,#253b50 51%,#5e9bd8 93%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6faeef', endColorstr='#5e9bd8',GradientType=0 );
+    }
+    &:hover {
+      @include box-shadow(0px 1px 5px 0px rgba(39,45,49,1));
+    }
+
+    $classes: ("making-food","eating","birthday-party","queen","gas-mask","goggles","lightening","skull");
+
+    // @TODO use sprite sass generator
+    @each $class, $i in $classes {
+      &.#{$class} {
+        .path-item--wrapper--inner {
+          background-image: url('/assets/images/#{$class}.jpg');
+
+          &.active,
+          &:hover {
+            background-image: url('/assets/images/#{$class}-hover.jpg');
+          }
+        }
+      }
+    }
+    &--inner {
+      background-repeat: no-repeat;
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+    }
+  }
+
+}

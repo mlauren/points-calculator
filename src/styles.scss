@@ -1,0 +1,9 @@
+// Import simple scss framework
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('../node_modules/font-awesome/css/font-awesome.css');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import "responsive-scss/core/config";
+@import "responsive-scss/theme/vars";
+@import "responsive-scss/theme/include_components";
+@import "responsive-scss/theme/grid";

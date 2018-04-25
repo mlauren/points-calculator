@@ -1,0 +1,80 @@
+/* BUTTONS
+ * ------------------------------------------------ */
+ .button,
+ button,
+ input[type="submit"],
+ input[type="reset"],
+ input[type="button"] {
+     border: 1px solid #336047;
+     border: {
+         top: 1px solid #336047;
+         left: 1px solid #336047;
+     };
+     @include border-radius(3px);
+     color: #fff;
+     display: inline-block;
+     font: {
+         weight: bold;
+         family: $form-font;
+     };
+     @include font-size($font-size - 1);
+     text-decoration: none;
+     cursor: pointer;
+     line-height: normal;
+     padding: relative(8px) relative(10px);
+     background: #68c190 -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #68c190), color-stop(100%, #49a070));
+     background: #68c190 -webkit-linear-gradient(top, #68c190 0%, #49a070 100%);
+     background: #68c190 -moz-linear-gradient(top, #68c190 0%, #49a070 100%);
+     background: #68c190 -o-linear-gradient(top, #68c190 0%, #49a070 100%);
+     background: #68c190 linear-gradient(top, #68c190 0%, #49a070 100%);
+     text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+     &:hover {
+         border: 1px solid #447f5f;
+         border: {
+             top: 1px solid #336047;
+             left: 1px solid #336047;
+         };
+     background: #49a070 -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #49a070), color-stop(100%, #68c190));
+       background: #49a070 -webkit-linear-gradient(top, #49a070 0%, #68c190 100%);
+       background: #49a070 -moz-linear-gradient(top, #49a070 0%, #68c190 100%);
+       background: #49a070 -o-linear-gradient(top, #49a070 0%, #68c190 100%);
+       background: #49a070 linear-gradient(top, #49a070 0%, #68c190 100%);
+     }
+     &:active {
+         border: 1px solid #49a070;
+         background: #49a070 -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #49a070), color-stop(100%, #68c190));
+         background: #49a070 -webkit-linear-gradient(top, #49a070 0%, #68c190 100%);
+         background: #49a070 -moz-linear-gradient(top, #49a070 0%, #68c190 100%);
+         background: #49a070 -o-linear-gradient(top, #49a070 0%, #68c190 100%);
+         background: #49a070 linear-gradient(top, #49a070 0%, #68c190 100%);
+     }
+     &.full-width {
+         width: 100%;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         text-align: center;
+     }
+     &.smaller {
+         @include font-size($font-size - 2);
+         padding: relative(4px) relative(5px);
+     }
+     &.larger {
+         @include font-size($font-size + 2);
+         padding: relative(10px) relative(18px);
+     }
+ }
+ 
+ /* Fix for odd Mozilla border & padding issues */
+ button,
+ input {
+     &::-moz-focus-inner {
+         border: 0;
+         padding: 0;
+     }
+ }
+ .social-button {
+     padding: 4px 13px;
+     min-height: 34px;
+     margin-right: 7px;
+ }
+ 
